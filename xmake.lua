@@ -4,18 +4,29 @@ set_languages("c++23")--设置语言标准
 
 set_encodings("utf-8")--设置源文件编码和可执行文件输出编码 
 
-set_project("godotCpp")-- 设置工程名
-
 set_version("0.0.1")-- 设置工程版本
 
 --拉取依赖包
 add_requires("godotcpp4 4.2") 
 
+
 target("godotCpp")
     set_kind("shared")--动态库类型
     add_files("src/*.cpp")
     add_includedirs("src/")
-    add_packages("godotcpp4")--添加依赖包到项目
+    add_packages('godotcpp4')--添加依赖包到项目
+    set_basename("lib个人库.$(host).$(mode).$(arch)")--设置生成的库名，
+    --lib你的库名.$(host) 当前主机操作系统 $(mode) 当前构建模式 $(arch) 当前系统架构
+    
+    --set_targetdir("demo/bin")--设置模板项目的构建生成路径。.DLL的路径。但中间文件也会在这里
+    on_load(function () --脚本运行
+        print('$(host)')--本机操作系统
+        print('$(arch)')--当前系统架构
+        print('$(mode)')--当前构建模式
+        print('$(os)')--获取编译平台的操作系统
+        print('$(plat)')--当前系统平台
+        --‘xmake f -h’ 查看所有内置变量
+    end) 
 
 
 --
