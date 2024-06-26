@@ -23,7 +23,7 @@ void uninitialize_example_module(ModuleInitializationLevel p_level) {
 }
 
 extern "C" {
-// 初始化. 你自己的类型_library_init,和gdexample.gdextension中的entry_symbol =
+// 初始化. 你自己的类型_library_init,和 lib你的库名.gdextension中的entry_symbol
 // "example_library_init"名称相同
 GDExtensionBool GDE_EXPORT
 example_library_init(GDExtensionInterfaceGetProcAddress p_get_proc_address,
