@@ -7,7 +7,7 @@ set_encodings("utf-8")--设置源文件编码和可执行文件输出编码
 set_version("0.0.1")-- 设置工程版本
 
 --拉取依赖包
-add_requires("godotcpp4 4.2") 
+add_requires("godotcpp4 4.3") 
 
 
 
@@ -19,11 +19,10 @@ target("godotCpp")
     set_basename("lib个人库.$(os).$(mode).$(arch)")--设置生成的库名，
     --lib你的库名.$(os) 当前编译平台的操作系统 $(mode) 当前构建模式 $(arch) 当前系统架构
     
-    --set_targetdir("demo/bin")--设置模板项目的构建生成路径。.DLL的路径。但中间文件也会在这里
     after_build(function (target )--脚本运行,将构建后的dll文件复制到bin文件夹中
-        print(target:targetfile())
-        os.cp(target:targetfile(), "demo/bin")--复制
-        print('$(plat)')--当前系统平台
+        print(target:targetfile())--构建目标位置
+        os.cp(target:targetfile(), "demo/bin")--复制目标到demo/bin文件夹中
+        print('$(os)')--当前编译平台
         --‘xmake f -h’ 查看所有内置变量
     end) 
 

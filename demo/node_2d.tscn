@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dncjptn372wh2"]
+[gd_scene load_steps=3 format=3 uid="uid://dncjptn372wh2"]
 
 [ext_resource type="Texture2D" uid="uid://bmodhgnpsxu0" path="res://icon.svg" id="1_o4ggh"]
+[ext_resource type="Script" path="res://gd_example.gd" id="2_t7wpg"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="GDExample" type="GDExample" parent="."]
-position = Vector2(3.06555, 4.56421)
+health = 0
+position = Vector2(11.9387, 11.8949)
 texture = ExtResource("1_o4ggh")
+script = ExtResource("2_t7wpg")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
