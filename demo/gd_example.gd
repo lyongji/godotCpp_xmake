@@ -13,3 +13,4 @@ func _process(delta: float) -> void:
 		timer.start(1)
 		print(health)
 		print(timer.time_left)	
+		吃("送")

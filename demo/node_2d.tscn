@@ -7,7 +7,7 @@
 
 [node name="GDExample" type="GDExample" parent="."]
 health = 0
-position = Vector2(11.9387, 11.8949)
+position = Vector2(9.94178, 10.0466)
 texture = ExtResource("1_o4ggh")
 script = ExtResource("2_t7wpg")
 

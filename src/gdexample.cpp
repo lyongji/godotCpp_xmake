@@ -1,6 +1,6 @@
 #include "gdexample.h"
 #include <godot_cpp/core/class_db.hpp>
-
+#include <godot_cpp/variant/char_string.hpp>
 using namespace godot;
 
 void GDExample::_bind_methods() {
@@ -18,8 +18,9 @@ void GDExample::_bind_methods() {
   ADD_PROPERTY(PropertyInfo(Variant::INT, "health"), "set_health",
                "get_health");
 
+  CharStringT<char16_t> 吃(u"吃");
   // 绑定吃饭方法
-  ClassDB::bind_method(D_METHOD("eat", "food"), &GDExample::eat);
+  ClassDB::bind_method(D_METHOD(吃.get_data(), "food"), &GDExample::eat);
 }
 
 GDExample::GDExample() {
