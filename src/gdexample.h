@@ -11,9 +11,13 @@ class GDExample : public Sprite2D {
 
 private:
   // 移动速度
-  double speed;
+  double 速度值;
   // 生命值
-  int health;
+  int 生命值;
+
+  double time_passed;
+  double time_emit;
+  double 振幅;
 
 protected:
   static void _bind_methods();
@@ -28,6 +32,9 @@ public:
   void set_speed(const double p_speed);
   // 获取速度
   double get_speed() const;
+
+  void set_振幅(const double p_振幅);
+  double get_振幅() const;
 
   // 设置生命值
   void set_health(const int p_health);
